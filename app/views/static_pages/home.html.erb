@@ -1,0 +1,11 @@
+<%# <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% if user_signed_in? %>
+<%= current_user.email %>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% else %>
+<%= link_to "サインイン", new_user_session_path %>
+<%= link_to "ユーザ登録", new_user_registration_path %>
+<br />
+<hr /><br />
+<h1>HOME PAGE</h1>
+<% end %>
