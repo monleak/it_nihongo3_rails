@@ -1,3 +1,10 @@
+<%= link_to "ホーム", root_path %><br><br>
+こんにちは、
+<%= link_to current_user.email, "/users/show" %>
+<br><br>
+<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
+<br />
+<hr /><br />
 <h1>Editing Book</h1>
 
 <%= render 'form', book: @book %>

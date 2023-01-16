@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <%= link_to "ホーム", root_path %><br><br>
 こんにちは、
-<%= current_user.email %>
+<%= link_to current_user.email, "/users/show" %>
 <br><br>
 <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 <br />
