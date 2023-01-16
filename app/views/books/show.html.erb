@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to "ホーム", root_path %><br><br>
+こんにちは、
+<%= current_user.email %>
+<br><br>
+<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
+<br />
+<hr /><br />
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -9,6 +15,14 @@
   <strong>Number of pages:</strong>
   <%= @book.number_of_pages %>
 </p>
-
+<% if @book.image.attached? %>
+<p>
+    <%= image_tag(@book.image) %>
+</p>
+<%else%>
+<p>
+    アーカイブされた画像はありません
+</p>
+<%end%>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
